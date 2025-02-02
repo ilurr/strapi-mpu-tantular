@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jabatans",
+  "info": {
+    "singularName": "jabatan",
+    "pluralName": "jabatans",
+    "displayName": "Jabatan"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jenisJabatan": {
+      "type": "string"
+    },
+    "kepegawaians": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::kepegawaian.kepegawaian",
+      "mappedBy": "jabatan"
+    }
+  }
+}

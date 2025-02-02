@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kepegawaians",
+  "info": {
+    "singularName": "kepegawaian",
+    "pluralName": "kepegawaians",
+    "displayName": "Kepegawaian",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NIP": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 19
+    },
+    "namaPegawai": {
+      "type": "string"
+    },
+    "namaJabatan": {
+      "type": "string"
+    },
+    "jabatan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jabatan.jabatan",
+      "inversedBy": "kepegawaians"
+    },
+    "statusKepegawaian": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::status-kepegawaian.status-kepegawaian",
+      "inversedBy": "kepegawaians"
+    },
+    "bagianKepegawaian": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bagian-kepegawaian.bagian-kepegawaian",
+      "inversedBy": "kepegawaians"
+    },
+    "golongan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::golongan.golongan",
+      "inversedBy": "kepegawaians"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "status_kepegawaians",
+  "info": {
+    "singularName": "status-kepegawaian",
+    "pluralName": "status-kepegawaians",
+    "displayName": "Status Kepegawaian",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "namaStatus": {
+      "type": "string"
+    },
+    "golongans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::golongan.golongan",
+      "mappedBy": "statusKepegawaian"
+    },
+    "kepegawaians": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::kepegawaian.kepegawaian",
+      "mappedBy": "statusKepegawaian"
+    }
+  }
+}

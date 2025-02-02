@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "golongans",
+  "info": {
+    "singularName": "golongan",
+    "pluralName": "golongans",
+    "displayName": "Golongan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "namaGolongan": {
+      "type": "string"
+    },
+    "statusKepegawaian": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::status-kepegawaian.status-kepegawaian",
+      "inversedBy": "golongans"
+    },
+    "kepegawaians": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::kepegawaian.kepegawaian",
+      "mappedBy": "golongan"
+    }
+  }
+}
